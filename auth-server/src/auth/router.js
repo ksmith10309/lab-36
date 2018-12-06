@@ -26,6 +26,7 @@ authRouter.post('/signin', auth, (req, res, next) => {
 });
 
 authRouter.get('/oauth', (req, res, next) => {
+  console.log('HELLO FROM GET /oauth');
   oauth.authorize(req)
     .then((token) => {
       res.cookie('auth', token);

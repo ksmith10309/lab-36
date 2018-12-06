@@ -1,42 +1,24 @@
-![CF](http://i.imgur.com/7v5ASc8.png) LAB
+![CF](http://i.imgur.com/7v5ASc8.png) LAB 36
 =================================================
 
-## Project Name
+## Github OAuth
 
-### Author: Student/Group Name
+### Author: Katherine & Emery & George 
 
 ### Links and Resources
-* [repo](http://xyz.com)
-* [travis](http://xyz.com)
-* [back-end](http://xyz.com)
-* [front-end](http://xyz.com)
-
-### Modules
-#### `modulename.js`
-##### Exported Values and Methods
-
-###### `foo(thing) -> string`
-Usage Notes or examples
-
-###### `bar(array) -> array`
-Usage Notes or examples
+* [repo](https://github.com/ksmith10309/lab-36)
 
 ### Setup
-#### `.env` requirements
-* `PORT` - Port Number
-* `MONGODB_URI` - URL to the running mongo instance/db
+#### auth-server `.env` requirements
+* `PORT` - 8080
+* `MONGODB_URI` - mongodb://localhost:27017/lab-36
+
+#### web-server `.env` requirements
+* `PORT` - 3000
 
 #### Running the app
-* `npm start`
-* Endpoint: `/foo/bar/`
-  * Returns a JSON object with abc in it.
-* Endpoint: `/bing/zing/`
-  * Returns a JSON object with xyz in it.
-
-#### Tests
-* How do you run tests?
-* What assertions were made?
-* What assertions need to be / should be made?
-
-#### UML
-Link to an image of the UML for your application and response to events
+* Run `npm install` in `auth-server` and `web-server`
+* Run `npm start` in `auth-server` and `web-server`
+* Run `mongod --dbpath=[path to database folder]` to start the database server
+* Endpoint: `/oauth`
+  * Returns a JSON web token

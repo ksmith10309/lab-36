@@ -14,23 +14,13 @@
 
         <script>
 
-          let googleURL = "https://accounts.google.com/o/oauth2/v2/auth";
+          let githubURL = 'https://github.com/login/oauth/authorize';
 
-          let options = {
-            client_id:'',
-            redirect_uri: 'http://localhost:3000/oauth',
-            scope: 'email openid profile',
-            prompt: 'consent',
-            response_type: 'code'
-          }
+          let QueryString = `scope=user:email&client_id=14a9a3caf31f7484a2f0`;
 
-          let QueryString = Object.keys(options).map( (key,i) => {
-            return `${key}=` + encodeURIComponent(options[key]);
-          }).join("&");
+          let authURL = `${githubURL}?${QueryString}`;
 
-          let authURL = `${googleURL}?${QueryString}`;
-
-          $('#oauth').append(`<a href="${authURL}">Login With Google</a>`);
+          $('#oauth').append(`<a href="${authURL}">Login With GitHub</a>`);
 
         </script>
 
